@@ -11,20 +11,28 @@
             <form th:action="@{/save}" th:object="${persona} method="POST">
             <div class="card">
                 <div class="card-header">
-                    <h3>Modulo Persona</h3>
+                    <h3><center>MODULO ESTUDIANTE</center></h3>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label>ID</label>
-                        <input th:field="*{id}" type="text" class="form-control"/>
+                        <label>CODSIS</label>
+                        <input th:field="*{codsis}" type="text" class="form-control"/>
                     </div>
                     <div class="form-group">
                         <label>NOMBRES</label>
-                        <input th:field="*{name}" type="text" class="form-control"/>
+                        <input th:field="*{nombre}" type="text" class="form-control"/>
                     </div>
                     <div class="form-group">
-                        <label>TELEFONO</label>
-                        <input th:field="*{telefono}" type="text" class="form-control"/>
+                        <label>APELLIDOS</label>
+                        <input th:field="*{apellidos}" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>CARRERA</label>
+                        <input th:field="*{carrera}" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label>SEXO</label>
+                        <input th:field="*{sexo}" type="text" class="form-control"/>
                     </div>
                 </div>
                 <div class="card-footer">

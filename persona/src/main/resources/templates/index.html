@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Estudiante</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -11,24 +11,32 @@
     <table class="table">
         <thead>
         <tr>
-            <th>ID</th>
+            <th>CODSIS</th>
             <th>NOMBRES</th>
-            <th>TELEFONO</th>
+            <th>APELLIDOS</th>
+            <th>CARRERA</th>
+            <th>SEXO</th>
             <th>ACCIONES</th>
         </tr>
         </thead>
         <tbody>
             <tr th:each="persona:${personas}">
-                <td th:text="${persona.id}"></td>
-                <td th:text="${persona.name}"></td>
-                <td th:text="${persona.telefono}"></td>
+                <td th:text="${persona.codsis}"></td>
+                <td th:text="${persona.nombre}"></td>
+                <td th:text="${persona.apellidos}"></td>
+                <td th:text="${persona.carrera}"></td>
+                <td th:text="${persona.sexo}"></td>
                 <td>
-                    <a class="btn btn-warning">Editar</a>
-                    <a calss="btn btn-danger">Eliminar</a>
+                    <a th:href="@{/editar/}+${persona.codsis}" class="btn btn-warning">Editar</a>
+                    <!--<a th:href="@{/eliminar/}+${persona.codsis}" class="btn btn-danger">Eliminar</a>-->
+                    <a th:href="eliminar([[${persona.codsis}]])" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
 </body>
 </html>
